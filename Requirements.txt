@@ -1,0 +1,18 @@
+TEAM NUMBER: 22
+TEAM: MiniBloom
+TEAM LEADER: Shekhar Singh
+
+Problem Statement:
+To create a desktop application that provides a user-friendly interface for the users to access key market data views.
+
+
+Requirements/Features:
+1.View changes in stock per ticker for different fixed-interval time frames .
+2.User can customize the time interval to view the fluctuations for an individual stock in additional settings.
+2.View changes in stock per basket
+3.View changes in stock per geography.
+4.Drill down features to provide individual stock histories.
+5.A compare button to allow the user to do a comparative analysis for multiple stocks.
+
+
+
