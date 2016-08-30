@@ -1,0 +1,13 @@
+//methods of the Bean to take the tickerNAame frm the client, receiving it using post verb and finding it in the database
+
+Bean MEthod
+
+public List<Double> getPriceOfStock(String tickerName1)
+{
+String sql = "SELECT p.priceClose FROM Priceclose as p" + "WHERE p.ticker = " + "(SELECT t.idticker FROM Ticker WHERE t.tickerName = :name)" + "AND p.marketday BETWEEN 254 AND 260";
+query.setParameter("name", tickerName1);
+TypedQuery<Priceclose> query = em.createquery(sql,Priceclose.class);
+// Execute the query, and get a collection of entities back.
+	        List<Double> list = query.getResultList();
+return list;			
+}
