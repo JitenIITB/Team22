@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+<persistence-unit transaction-type="JTA" name="MarketDataAnalysisJPA-PU">
+<jta-data-source>java:jboss/datasources/mydbDS</jta-data-source>
+</persistence-unit>
+</persistence>
+
+
+
+<!--  
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="MarketDataAnalysisJPA" transaction-type="JTA">
+		<class>market.dataanalysis.jpa.Company</class>
+		<class>market.dataanalysis.jpa.Country</class>
+		<class>market.dataanalysis.jpa.Marketday</class>
+		<class>market.dataanalysis.jpa.Priceclose</class>
+		<class>market.dataanalysis.jpa.Priceopen</class>
+		<class>market.dataanalysis.jpa.Region</class>
+		<class>market.dataanalysis.jpa.Sector</class>
+		<class>market.dataanalysis.jpa.Stockexchange</class>
+		<class>market.dataanalysis.jpa.Ticker</class>
+	</persistence-unit>
+</persistence>
+
+
+-->
