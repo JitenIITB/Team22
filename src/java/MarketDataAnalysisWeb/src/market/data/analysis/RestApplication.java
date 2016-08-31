@@ -1,18 +1,22 @@
+package market.data.analysis;
+
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.naming.NamingException;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @ApplicationPath("/rest")
-public class MarketDataRestApplication extends Application {
+public class RestApplication extends Application {
+
 	private Set<Object> singletons = new HashSet<Object>();
 	private Set<Class<?>> empty = new HashSet<Class<?>>();
 
-	public MarketDataRestApplication() {
+	public RestApplication() throws NamingException {
 		// TODO Auto-generated constructor stub
 		// singletons.add(new TestRest());
-		singletons.add(new MarketDataRestService());
+		singletons.add(new MarketDataAnalysisRestService());
 
 	}
 
@@ -25,4 +29,5 @@ public class MarketDataRestApplication extends Application {
 	public Set<Object> getSingletons() {
 		return singletons;
 	}
+
 }

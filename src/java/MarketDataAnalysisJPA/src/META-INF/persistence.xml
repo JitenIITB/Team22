@@ -2,6 +2,7 @@
 <persistence xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 <persistence-unit transaction-type="JTA" name="MarketDataAnalysisJPA-PU">
 <jta-data-source>java:jboss/datasources/mydbDS</jta-data-source>
+<class>market.dataanalysis.jpa.TickersInfo</class>
 </persistence-unit>
 </persistence>
 
