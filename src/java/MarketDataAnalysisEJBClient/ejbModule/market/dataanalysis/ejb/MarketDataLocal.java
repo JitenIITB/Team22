@@ -7,18 +7,15 @@ import javax.ejb.Local;
 
 import market.dataanalysis.jpa.Country;
 import market.dataanalysis.jpa.Priceclose;
+import market.dataanalysis.jpa.Top5Vol;
 
 @Local
 public interface MarketDataLocal {
 
 	public List<Country> testMethod();
-	// public List<String> testMethod();
-	// public List<BigDecimal> getPriceOfStock(String tickerName1);
-
+	public List<BigDecimal> getTickerInfo(String name1, String date1, String date2);
 	public List<BigDecimal> getTickerInfo(String name1);
-
-	// public String getTickerInfo(String name1) ;
-
-	// public List<Priceclose> gettest(int tick);
-
+	public List<BigDecimal> getSectorInfo(String name1);
+	public List<BigDecimal> getRegionalInfo();
+	public List<Top5Vol> getTop5();
 }

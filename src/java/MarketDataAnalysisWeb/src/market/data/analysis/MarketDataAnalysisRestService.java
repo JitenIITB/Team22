@@ -28,18 +28,49 @@ import market.dataanalysis.ejb.MarketDataLocal;
 @Produces({ "application/xml", "application/json" })
 @Consumes({ "application/xml", "application/json" })
 public class MarketDataAnalysisRestService {
-	
+
 	private MarketDataLocal bean;
-	public MarketDataAnalysisRestService() throws NamingException{
+
+	public MarketDataAnalysisRestService() throws NamingException {
 		InitialContext context = new InitialContext();
-		bean = (MarketDataLocal)context.lookup("java:app/MarketDataAnalysisEJB/MarketData!market.dataanalysis.ejb.MarketDataLocal");
+		bean = (MarketDataLocal) context
+				.lookup("java:app/MarketDataAnalysisEJB/MarketData!market.dataanalysis.ejb.MarketDataLocal");
 	}
-	
+
 	@GET
 	@Produces("application/json")
-	public List<BigDecimal> testing2(@QueryParam("filter")@DefaultValue("") String filter) {
+	public List<BigDecimal> getTickerInfo(@QueryParam("filter") @DefaultValue("") String filter) {
 		System.out.println(filter);
 		return bean.getTickerInfo(filter);
 	}
+
+	@GET
+	@Path("/getregionalinfo")
+	@Produces("application/json")
+	public List<BigDecimal> getRegionalInfo() {
+		return bean.getRegionalInfo();
+	}
+
+	@GET
+	@Path("/getsectorinfo/{sector}")
+	@Produces("application/json")
+	public List<BigDecimal> getSectorInfo(@PathParam("sector") String sector) {
+		return bean.getSectorInfo(sector);
+	}
+
+	@GET
+	@Path("/{filter}/{filter1}/{filter2}")
+	@Produces("application/json")
+	public List<BigDecimal> getTickerInfo(@PathParam("filter") String filter, @PathParam("filter1") String filter1,
+			@PathParam("filter2") String filter2) {
+		// System.out.println(filter);
+		// return bean.getTickerInfo(filter);
+		// }
+		List<BigDecimal> list;
+		list = bean.getTickerInfo(filter, filter1, filter2);
+		return list;
+	}
+	
+	
 
 }

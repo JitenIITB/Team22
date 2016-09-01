@@ -15,8 +15,8 @@ public class RestApplication extends Application {
 
 	public RestApplication() throws NamingException {
 		// TODO Auto-generated constructor stub
-		// singletons.add(new TestRest());
 		singletons.add(new MarketDataAnalysisRestService());
+		singletons.add(new MarketRestServiceVolume());
 
 	}
 
