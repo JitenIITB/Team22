@@ -17,6 +17,7 @@ public class RestApplication extends Application {
 		// TODO Auto-generated constructor stub
 		singletons.add(new MarketDataAnalysisRestService());
 		singletons.add(new MarketRestServiceVolume());
+		singletons.add(new MarketRestServiceGain());
 
 	}
 

@@ -13,6 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Grad 2016 software/Java Tools/wildfly-10.0.0.Final/wildfly-10.0.0.Final/bin/client/jboss-client.jar"/>
-	<classpathentry kind="src" path="/MarketDataAnalysisEJBClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisEJBClient"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

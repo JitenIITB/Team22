@@ -6,6 +6,13 @@
 <class>market.dataanalysis.jpa.SectorsInfo</class>
 <class>market.dataanalysis.jpa.Nasdaq</class>
 <class>market.dataanalysis.jpa.Top5Vol</class>
+<class>market.dataanalysis.jpa.Top5month</class>
+<class>market.dataanalysis.jpa.Top5year</class>
+<class>market.dataanalysis.jpa.Stocklastdayinfo</class>
+<class>market.dataanalysis.jpa.Gainertop5</class>
+<class>market.dataanalysis.jpa.GainerTopMonth</class>
+<class>market.dataanalysis.jpa.TopFiveGainer</class>
+<class>market.dataanalysis.jpa.Profit</class>
 </persistence-unit>
 </persistence>
 

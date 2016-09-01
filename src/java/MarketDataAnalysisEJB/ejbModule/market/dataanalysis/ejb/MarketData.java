@@ -1,9 +1,6 @@
 package market.dataanalysis.ejb;
 
 import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +15,13 @@ import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 
 import market.dataanalysis.jpa.Country;
+import market.dataanalysis.jpa.GainerTopMonth;
+import market.dataanalysis.jpa.Gainertop5;
+import market.dataanalysis.jpa.Stocklastdayinfo;
 import market.dataanalysis.jpa.Top5Vol;
+import market.dataanalysis.jpa.Top5month;
+import market.dataanalysis.jpa.Top5year;
+import market.dataanalysis.jpa.TopFiveGainer;
 
 /**
  * Session Bean implementation class MarketData
@@ -124,6 +127,107 @@ public class MarketData implements MarketDataRemote, MarketDataLocal {
 		TypedQuery<Top5Vol> query = em.createQuery(sql,Top5Vol.class);
 
 		List<Top5Vol> pro = query.setMaxResults(5).getResultList();
+		return pro;
+	}
+	
+	public List<Top5month> getTop5MonthAvg()
+	{
+		
+		String sql="select m from Top5month as m";
+		TypedQuery<Top5month> query = em.createQuery(sql,Top5month.class);
+
+		List<Top5month> pro = query.setMaxResults(5).getResultList();
+		return pro;
+	}
+	
+
+	public List<Top5year> getTop5YearAvg()
+	{
+		
+		String sql="select y from Top5year as y";
+		TypedQuery<Top5year> query = em.createQuery(sql,Top5year.class);
+
+		List<Top5year> pro = query.setMaxResults(5).getResultList();
+		return pro;
+	}
+	
+	public List<BigDecimal> getStockMonthAvg(String ticker)
+	{
+		
+		String sql="select m.v from Top5month as m where m.tickerName= :name";
+		Query query = em.createQuery(sql);
+		query.setParameter("name", ticker);
+		List<BigDecimal> pro = query.getResultList();
+		return pro;
+	}
+	
+	public List<BigDecimal> getStockYearAvg(String ticker)
+	{
+		
+		String sql="select m.v from Top5year as m where m.tickerName= :name";
+		Query query = em.createQuery(sql);
+		query.setParameter("name", ticker);
+		List<BigDecimal> pro = query.getResultList();
+		return pro;
+	}
+	
+	public List<BigDecimal> getvol(String tick)
+	{
+		
+		String sql="select t.volume from Top5Vol as t" + " where t.marketdays =" + "'2011-12-30'"
+		+" and t.tickerName= :name " ;
+		Query query = em.createQuery(sql);
+		query.setParameter("name", tick);
+		List<BigDecimal> pro = query.getResultList();
+		return pro;
+	}
+	
+	public List<Stocklastdayinfo> getStockInfo(String tick)
+	{
+		
+		String sql="select y from Stocklastdayinfo as y where y.ticker= :name";
+		TypedQuery<Stocklastdayinfo> query = em.createQuery(sql,Stocklastdayinfo.class);
+		query.setParameter("name", tick);
+
+		List<Stocklastdayinfo> pro = query.getResultList();
+		return pro;
+	}
+	
+	public List<Gainertop5> getTop5gainers()
+	{
+		
+		String sql="select t from Gainertop5 as t";
+		TypedQuery<Gainertop5> query = em.createQuery(sql,Gainertop5.class);
+
+		List<Gainertop5> pro = query.setMaxResults(5).getResultList();
+		return pro;
+	}
+	
+	public List<GainerTopMonth> getTop5MonthGain()
+	{
+		
+		String sql="select m from GainerTopMonth as m order by m.monthlyGain desc";
+		TypedQuery<GainerTopMonth> query = em.createQuery(sql,GainerTopMonth.class);
+		List<GainerTopMonth> pro = query.setMaxResults(5).getResultList();
+		return pro;
+	}
+	
+	public List<TopFiveGainer> getTop5Yeargainer()
+	{
+		
+		String sql="select m from TopFiveGainer as m";
+		TypedQuery<TopFiveGainer> query = em.createQuery(sql,TopFiveGainer.class);
+		List<TopFiveGainer> pro = query.getResultList();
+		return pro;
+	}
+	
+	public List<BigDecimal> getProfit(String ticker)
+	{
+		
+		String sql="select m.dif from Profit as m where m.ticker= :name";
+		Query query = em.createQuery(sql);
+		query.setParameter("name", ticker);
+		List<BigDecimal> pro = query.getResultList();
 		return pro;
 	}
 

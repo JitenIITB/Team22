@@ -11,6 +11,10 @@
 	<classpathentry kind="lib" path="C:/JavaEEJBossDev/Databases/hibernate-core-4.3.9.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Grad 2016 software/Java Tools/wildfly-10.0.0.Final/wildfly-10.0.0.Final/bin/client/jboss-client.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/WildFly 10.0 Runtime 1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisEJBClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisEJB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisJPA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

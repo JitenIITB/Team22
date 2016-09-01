@@ -18,6 +18,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import market.dataanalysis.ejb.MarketDataLocal;
+import market.dataanalysis.jpa.Stocklastdayinfo;
 
 /**
  * @author Grad45
@@ -69,6 +70,13 @@ public class MarketDataAnalysisRestService {
 		List<BigDecimal> list;
 		list = bean.getTickerInfo(filter, filter1, filter2);
 		return list;
+	}
+	
+	@GET
+	@Path("/info/{tick}")
+	@Produces("application/json")
+	public List<Stocklastdayinfo> getStockinfo(@PathParam("tick") String tick) {
+		return bean.getStockInfo(tick);
 	}
 	
 	
